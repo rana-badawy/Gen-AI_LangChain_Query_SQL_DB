@@ -1,0 +1,6 @@
+python-dotenv
+streamlit
+langchain_community
+langchain
+pymysql
+chromadb
