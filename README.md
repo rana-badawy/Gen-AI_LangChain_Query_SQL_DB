@@ -52,7 +52,8 @@ This project provides an interface to convert natural language input into SQL qu
 
 2. **Add your Credentials**
 
-   Modify the `GOOGLE_API_KEY` in the `docker-compose.yml` file to include your key on Google Palm.
+   - Modify the `GOOGLE_API_KEY` in the `docker-compose.yml` file to include your key on Google Palm.
+   - Add .env file to include your GOOGLE_API_KEY and Database username and password.
 
    
 3. **Build and run the Docker container**   
@@ -77,4 +78,4 @@ This project provides an interface to convert natural language input into SQL qu
 
 ## Notebook
 
-The project also includes a Google Colab notebook (`query_database_with_ai.ipynb`) that you can use to experiment with the code before running it locally.
+The project also includes a Google Colab notebook `query_database_with_ai.ipynb` that you can use to experiment with the code before running it locally.
