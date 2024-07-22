@@ -4,3 +4,5 @@ langchain_community
 langchain
 pymysql
 chromadb
+google.generativeai
+cryptography

@@ -6,8 +6,11 @@ st.title("Products Database Q&A")
 question = st.text_input("Question: ")
 
 if question:
-    chain = get_few_shot_db_chain()
-    response = chain.run(question)
+    chain, generate_query = get_few_shot_db_chain(question)
+
+    query = generate_query.invoke({"question": question})
+    response = chain.invoke({"question": question})
 
     st.header("Answer")
+    st.write(query)
     st.write(response)

@@ -17,12 +17,13 @@ from few_shots import few_shots
 # Load environment variables
 load_dotenv()
 
-def get_few_shot_db_chain():
+
+def get_few_shot_db_chain(question):
     google_api_key = os.environ['GOOGLE_API_KEY']
 
     db_user = os.environ['DB_USER']
     db_password = os.environ['DB_PASSWORD']
-    db_host = "localhost"
+    db_host = "db"
     db_name = "products"
 
     # Initialize a Chroma vector store and delete existing collections
@@ -86,12 +87,12 @@ def get_few_shot_db_chain():
 
     # Define the final chain to process the query and return the answer
     chain = (
-        RunnablePassthrough.assign(query=generate_query).assign(
-            result=itemgetter("query") | execute_query
-        ) | rephrase_answer
+            RunnablePassthrough.assign(query=generate_query).assign(
+                result=itemgetter("query") | execute_query
+            ) | rephrase_answer
     )
 
-    return chain
+    return chain, generate_query
 
 """
 # Test

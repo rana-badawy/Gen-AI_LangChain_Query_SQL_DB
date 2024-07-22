@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    depends_on:
+      - db
+    environment:
+      - GOOGLE_API_KEY=your_key
+      - DB_USER=root
+      - DB_PASSWORD=admin
+      - DB_HOST=db
+      - DB_NAME=products
+
+  db:
+    image: mysql:8.0
+    container_name: "db"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: products
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db_data:/var/lib/mysql
