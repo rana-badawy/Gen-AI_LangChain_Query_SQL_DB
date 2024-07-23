@@ -52,8 +52,8 @@ This project provides an interface to convert natural language input into SQL qu
 
 2. **Add your Credentials**
 
-   - Modify the `GOOGLE_API_KEY` in the `docker-compose.yml` file to include your key on Google Palm.
-   - Add .env file to include your GOOGLE_API_KEY and Database username and password.
+   - Modify the `GOOGLE_API_KEY` in the `docker-compose.yml` file to include your key on Google PaLM.
+   - Add .env file to include your Google API key and Database username and password.
 
    
 3. **Build and run the Docker container**   
@@ -63,7 +63,7 @@ This project provides an interface to convert natural language input into SQL qu
    ```
 4. **Create the database in Docker container**
 
-   Use the SQL script in `create_db_script.sql` to create the database in the docker container**
+   Use the SQL script in `create_db_script.sql` to create the database in the docker container.
 
 
 5. **Access the Streamlit app**
